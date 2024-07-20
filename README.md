@@ -44,7 +44,7 @@ This project aims to classify flower species using pretrained deep learning mode
    Ensure your data is organized in the following structure:
    
     ```
-    data/
+    flowers/
         train/
         valid/
         test/
@@ -53,15 +53,15 @@ This project aims to classify flower species using pretrained deep learning mode
 2. **Train the classifier:**
 
     ```bash
-    python train.py data_dir --save_dir checkpoints_folder --arch efficientnet --hidden_units 512 --learning_rate 0.001 --epochs 20 --gpu
+    python train.py <data-folder-path> --arch <model-name> --epochs <int> --learning_rate <float> --gpu
     ```
 
 3. **Evaluate the classifier:**
 
-    Once the training is complete, the model will be saved as a checkpoint in the specified directory.
+    Once the training is complete, the model will be saved as a checkpoint in the specified directory. 
 
     ```bash
-    python train.py data --topk 5 --category_names cat_to_name.json --gpu
+    python predict.py <image-path> <checkpoint-path> --topk <int> --category_names <json-file-path> --gpu
     ```
 
 
